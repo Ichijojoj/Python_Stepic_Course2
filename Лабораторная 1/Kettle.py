@@ -93,3 +93,6 @@ class Kettle:
         """
         heated_status = "heated" if self.is_heated else "not heated"
         return f"Current volume: {self.current_volume} liters, Water is {heated_status}"
+        
+if __name__ == "__main__":
+    doctest.testmod()
