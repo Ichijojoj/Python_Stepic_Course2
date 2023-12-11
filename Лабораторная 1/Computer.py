@@ -96,3 +96,6 @@ class Computer:
         on_status = "Включен" if self.is_on else "Выключен"
         mode_status = "Игровой" if self.is_in_game_mode else "Обычный"
         return f"{on_status}, Режим работы: {mode_status}"
+
+if __name__ == "__main__":
+    doctest.testmod()
