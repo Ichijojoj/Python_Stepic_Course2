@@ -26,7 +26,7 @@ class PaperBook(Book):
 
     @property
     def pages(self):
-        return self._pages
+        return self.pages
 
     @pages.setter
     def pages(self, value):
@@ -35,6 +35,9 @@ class PaperBook(Book):
         elif value <= 0:
             raise ValueError("Количество страниц должно быть положительным числом.")
         self._pages = value
+    
+    def repr(self):
+        return f"{self.class.name}(name={self.name!r}, author={self.author!r}, pages={self.pages})"
 
     def __str__(self):
         return f"{super().__str__()} Количество страниц: {self._pages}."
@@ -47,7 +50,7 @@ class AudioBook(Book):
 
     @property
     def duration(self):
-        return self._duration
+        return self.duration
 
     @duration.setter
     def duration(self, value):
@@ -56,6 +59,9 @@ class AudioBook(Book):
         elif value <= 0:
             raise ValueError
         self._duration = value
+    
+    def repr(self):
+        return f"{self.class.name}(name={self.name!r}, author={self.author!r}, duration={self.duration})"
     def __str__(self):
         return f"{super().__str__()} Продолжительность: {self._duration} часа."
 
